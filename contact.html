@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Y Square Photography</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <nav class="bg-black text-white fixed w-full top-0 z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <div class="flex items-center space-x-3">
+        <img src="logo.png" alt="Y Square Logo" class="h-10 w-10 rounded-full">
+        <span class="font-bold text-xl">Y Square Photography</span>
+      </div>
+      <div class="space-x-6 hidden md:flex">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html" class="text-yellow-400">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-28 pb-20 text-center">
+    <h1 class="text-5xl font-bold mb-6">Get in Touch</h1>
+    <p class="mb-8">We’d love to hear from you! Book your session today.</p>
+
+    <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+      <p class="text-lg font-semibold mb-4">📞 Phone: +91 7871727575</p>
+      <p class="text-lg font-semibold mb-6">📧 Email: yugatamil@gmail.com</p>
+      <form>
+        <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 border rounded">
+        <input type="email" placeholder="Your Email" class="w-full p-3 mb-4 border rounded">
+        <textarea placeholder="Your Message" class="w-full p-3 mb-4 border rounded"></textarea>
+        <button class="bg-black text-white px-6 py-3 rounded-lg hover:bg-yellow-500 transition">Send Message</button>
+      </form>
+    </div>
+    <!-- Navbar -->
+<nav class="bg-black text-white p-4 flex justify-between items-center">
+  <h1 class="text-xl font-bold">Y SQUARE</h1>
+  
+  <!-- Desktop Menu -->
+  <div class="hidden md:flex space-x-8">
+    <a href="index.html" class="hover:text-yellow-400">Home</a>
+    <a href="about.html" class="hover:text-yellow-400">About</a>
+    <a href="portfolio.html" class="hover:text-yellow-400">Portfolio</a>
+    <a href="contact.html" class="hover:text-yellow-400">Contact</a>
+  </div>
+
+  <!-- Mobile Menu Button -->
+  <button id="menu-btn" class="md:hidden flex flex-col space-y-1">
+    <span class="block w-6 h-0.5 bg-white"></span>
+    <span class="block w-6 h-0.5 bg-white"></span>
+    <span class="block w-6 h-0.5 bg-white"></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden bg-black text-white flex flex-col space-y-4 p-4 md:hidden">
+  <a href="index.html" class="hover:text-yellow-400">Home</a>
+  <a href="about.html" class="hover:text-yellow-400">About</a>
+  <a href="portfolio.html" class="hover:text-yellow-400">Portfolio</a>
+  <a href="contact.html" class="hover:text-yellow-400">Contact</a>
+</div>
+
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+  </section>
+
+  <footer class="bg-black text-white text-center p-6">
+    <p>© 2025 Y Square Photography | All Rights Reserved</p>
+  </footer>
+<script>
+  // Add fade-in effect when page loads
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  // Smooth fade-out when navigating to another page
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", e => {
+      if (link.href.includes(window.location.origin)) {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 500); // delay before redirect
+      }
+    });
+  });
+</script>
+</body>
+</html>

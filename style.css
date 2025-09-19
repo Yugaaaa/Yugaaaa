@@ -1,0 +1,9 @@
+/* Fade-in animation on page load */
+body {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+body.fade-in {
+  opacity: 1;
+}

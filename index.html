@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Y Square Photography</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-black text-white fixed w-full top-0 z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <div class="flex items-center space-x-3">
+        <img src="logo.png" alt="Y Square Logo" class="h-10 w-10 rounded-full">
+        <span class="font-bold text-x1">Y Square Photography</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-yellow-400">Home</a>
+        <a href="about.html" class="hover:text-yellow-400">About</a>
+        <a href="portfolio.html" class="hover:text-yellow-400">Portfolio</a>
+        <a href="contact.html" class="hover:text-yellow-400">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden flex flex-col space-y-1">
+        <span class="block w-6 h-0.5 bg-white"></span>
+        <span class="block w-6 h-0.5 bg-white"></span>
+        <span class="block w-6 h-0.5 bg-white"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden bg-black text-white flex flex-col space-y-8 p-8 md:hidden">
+    <a href="index.html" class="hover:text-yellow-400">Home</a>
+    <a href="about.html" class="hover:text-yellow-400">About</a>
+    <a href="portfolio.html" class="hover:text-yellow-400">Portfolio</a>
+    <a href="contact.html" class="hover:text-yellow-400">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="h-screen flex flex-col items-center justify-center text-center bg-cover bg-center relative" style="background-image: url('https://source.unsplash.com/1600x900/?wedding,photography');">
+    <div class="absolute inset-0 bg-black opacity-60"></div>
+    <div class="relative z-10 text-white animate__animated animate__fadeIn">
+      <img src="logo.png" alt="Y Square Logo" class="mx-auto h-32 w-32 mb-6 rounded-full shadow-lg">
+      <h1 class="text-5xl font-sans mb-4">Photography & Videography</h1>
+      <p class="text-xl mb-6">Weddings  |  Birthdays  |  Maternity  |  Events & More</p>
+      <a href="portfolio.html" class="bg-yellow-500 px-6 py-3 rounded-lg text-black font-semibold hover:bg-yellow-400 transition">View Our Work</a>
+    </div>
+  </section>
+
+  <!-- Services Highlight -->
+  <section class="py-20 bg-white text-center">
+    <h2 class="text-4xl font-bold mb-10">Our Expertise</h2>
+    <div class="grid md:grid-cols-4 gap-8 px-6">
+      <div class="p-6 bg-gray-100 rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-2">
+        <h3 class="text-2xl font-semibold mb-3">Weddings</h3>
+        <a href="wedding.html"
+        <p>Beautifully crafted wedding stories with candid shots.</p>
+      </div>
+      <div class="p-6 bg-gray-100 rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-2">
+        <h3 class="text-2xl font-semibold mb-3">Birthdays</h3>
+        <a href="birthday.html"
+        <p>Fun, lively and unforgettable birthday moments captured.</p>
+      </div>
+      <div class="p-6 bg-gray-100 rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-2">
+        <h3 class="text-2xl font-semibold mb-3">Maternity</h3>
+        <a href="maternity.html"
+        <p>Capturing the beauty and joy of motherhood.</p>
+      </div>
+      <div class="p-6 bg-gray-100 rounded-lg shadow hover:shadow-lg transition transform hover:-translate-y-2">
+        <h3 class="text-2xl font-semibold mb-3">Events</h3>
+        <a href="events.html"
+        <p>From corporate events to private functions, we cover it all.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Photos -->
+  <section class="py-20 bg-gray-200">
+    <h2 class="text-4xl font-bold text-center mb-10">Sample Shots</h2>
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-6">
+      <img src="pic1.png" class="rounded-lg shadow-lg hover:scale-105 transition">
+      <img src="pic2.png" class="rounded-lg shadow-lg hover:scale-105 transition">
+      <img src="pic3.png" class="rounded-lg shadow-lg hover:scale-105 transition">
+      <img src="pic4.png" class="rounded-lg shadow-lg hover:scale-105 transition">
+      <img src="pic5.png" class="rounded-lg shadow-lg hover:scale-105 transition">
+      <img src="pic6.png" class="rounded-lg shadow-lg hover:scale-105 transition">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center p-6">
+    <p class="mb-2">📞 +91 7871727575 | 📧 yugatamil@gmail.com</p>
+    <p>© 2025 Y Square Photography | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Hamburger menu toggle
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+
+    // Page fade-in/out
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", e => {
+        if (link.href.includes(window.location.origin)) {
+          e.preventDefault();
+          document.body.classList.remove("fade-in");
+          setTimeout(() => {
+            window.location.href = link.href;
+          }, 500);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
